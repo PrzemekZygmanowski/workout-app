@@ -3,19 +3,8 @@ const { ApolloServer, gql } = require("apollo-server-express");
 const mongoose = require("mongoose");
 const colors = require("colors");
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: () => {
-      return "hello world";
-    },
-  },
-};
+const typeDefs = require("./typeDefs");
+const resolvers = require("./resolvers");
 
 async function startServer() {
   const app = express();
@@ -37,7 +26,11 @@ async function startServer() {
 
   mongoose
     .connect(
-      `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.jwudy.mongodb.net/test`
+      `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.jwudy.mongodb.net/test`,
+      {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+      }
     )
     .then(() => {
       app.listen(
