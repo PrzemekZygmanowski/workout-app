@@ -1,0 +1,7 @@
+{
+    "env":{
+        "MONGO_USER": "przemek",
+        "MONGO_PASSWORD": "EwiY8Sds8xKGV7TN",
+        "MONGO_DB": "workout-app",
+        "PORT": 4000    }
+}
