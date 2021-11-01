@@ -7,6 +7,7 @@ const typeDefs = gql`
     workoutType: String
     timerType: String
     description: String
+    equipment: String
     time: String
   }
 
@@ -15,17 +16,28 @@ const typeDefs = gql`
     workoutType: String!
     timerType: String!
     description: String!
+    equipment: String
+    time: String
+  }
+
+  input UpdateWorkoutInput {
+    title: String
+    workoutType: String
+    timerType: String
+    description: String
+    equipment: String
     time: String
   }
 
   type Query {
     getAllWorkouts: [Workout]
     getWorkoutById: Workout
-    getWorkoutByTitle: Workout
   }
 
   type Mutation {
     createWorkout(workout: WorkoutInput): Workout
+    deleteWorkout(id: ID): String
+    updateWorkout(id: ID, workout: UpdateWorkoutInput): Workout
   }
 `;
 

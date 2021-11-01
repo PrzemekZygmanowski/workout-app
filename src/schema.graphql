@@ -4,6 +4,7 @@ type Workout {
   workoutType: String
   timerType: String
   description: String
+  equipment: String
   time: String
 }
 
@@ -12,6 +13,7 @@ input WorkoutInput {
   workoutType: String!
   timerType: String!
   description: String!
+  equipment: String
   time: String
 }
 

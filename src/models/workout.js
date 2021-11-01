@@ -19,6 +19,9 @@ const WorkoutSchema = new Schema({
     type: String,
     required: true,
   },
+  equipment: {
+    type: String,
+  },
   time: {
     type: String,
   },
