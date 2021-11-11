@@ -1,0 +1,39 @@
+[
+    {
+        "_id":"618050a7f70345f12e0e838d",
+        "title":"murph",
+        "workoutType":"Bodyweight",
+        "timerType":"for time",
+        "description":" 1 mile run 100 pullups 200 pushups 300 squats 1 mile run",
+        "equipment":"9/6 kg vest"
+        },
+        {
+            "_id":"61842c862a2694049486134e",
+            "title":"DT",
+            "workoutType":"Barbell",
+            "timerType":"for time",
+            "description":"5 Rounds For Time 12 Deadlifts 9 Hang Power Cleans 6 Push Jerks",
+            "equipment":"155/105 lb barbell"
+           },
+           {
+               "_id":"618c2ac2f33982a87fee88a6",
+            "title":"The Seven",
+            "workoutType":"Mixed",
+            "timerType":"for time",
+            "description": "7 Rounds For Time 7 Handstand Push-Ups 7 Thrusters, 7 Knees-to-Elbows 7 Deadlifts (245/165 lb) 7 Burpees 7 Kettlebell Swings (2/1.5 pood) 7 Pull-Ups",
+            "equipment":"135/95 lb and 245/165 lb barbell, pullups bar, kettlebell 2/1.5 pood"
+        },
+        {"_id":"618c2b23f33982a87fee88a8","title":"Nate","workoutType":"Mixed","timerType":"Amrap","description":" 20' amrap: 2 Muscle-Ups 4 Handstand Push-Ups 8 Kettlebell Swings (2/1.5 pood)","equipment":"Rings, Kettlebell 2/1.5 pood"},
+        {"_id":"618c2ba6f33982a87fee88aa","title":"Loredo","workoutType":"Bodyweight","timerType":"for time","description":"6 Rounds For Time 24 Air Squats 24 Push-Ups 24 Walking Lunges 400 meter Run","equipment":"none"},
+        {"_id":"618c2bf1f33982a87fee88ac","title":"Kalsu","workoutType":"Mixed","timerType":"for time","description":"100 Thrusters (135/95 lb) 5 Burpees to start and at the top of every minute","equipment":"barbell 135/95 lb"},
+        {"_id":"618c2c74f33982a87fee88ae","title":"Miron","workoutType":"Mixed","timerType":"for time","description":"5 Rounds for Time: 800 meter Run 23 Back Squats (¾ Body Weight) 13 Deadlifts (1 ½ Body Weight)","equipment":"barbell ¾ Body Weight and 1 ½ Body Weight"},
+        {"_id":"618c2cd7f33982a87fee88b0","title":"Annie","workoutType":"Bodyweight","timerType":"for time","description":"50 – 40 – 30 – 20 – 10 For Time Double Unders Sit Ups","equipment":"rope"},
+        {"_id":"618c2d36f33982a87fee88b4","title":"Cindy","workoutType":"Bodyweight","timerType":"Amrap","description":"5 Pull Ups 10 Push Ups 15 Squats As Many Rounds As Possible (AMRAP) in 20 Minutes","equipment":"pull ups bar"},
+        {"_id":"618c2cfff33982a87fee88b2","title":"Angie","workoutType":"Bodyweight","timerType":"for time","description":"100 Pull Ups 100 Push Ups 100 Sit Ups 100 Squats","equipment":"none"},
+        {"_id":"618c2d72f33982a87fee88b6","title":"Diane","workoutType":"Mixed","timerType":"For Time","description":"21 – 15 – 9 Reps 225lb Deadlift Handstand Push Ups","equipment":"Barbell 225 lb"},
+        {"_id":"618c2d9ff33982a87fee88b8","title":"Fran","workoutType":"Mixed","timerType":"For Time","description":"21 – 15 – 9 Reps Thruster 95lbs Pull Ups","equipment":"Barbell 95lbs"},
+        {"_id":"618c2dcaf33982a87fee88ba","title":"Grace","workoutType":"Barbell","timerType":"For Time","description":"135lb Clean & Jerk 30 Reps","equipment":"Barbell 135lbs"},
+        {"_id":"618c2de7f33982a87fee88bc","title":"Isabel","workoutType":"Barbell","timerType":"For Time","description":"135lb Snatch 30 Reps","equipment":"Barbell 135lbs"},
+        {"_id":"618c2e29f33982a87fee88be","title":"Karen","workoutType":"Mixed","timerType":"For Time","description":"For Time 150 Wall Balls 20lbs","equipment":"Wall ball 20lbs"}
+
+]
