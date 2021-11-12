@@ -6,7 +6,6 @@ const env = require("./nodemon.json");
 //load models
 const Workout = require("./src/models/workout");
 
-//TODO import env from nodemon.json
 const connectDB = async () => {
   const conn = await mongoose.connect(
     `mongodb+srv://${env.env.MONGO_USER}:${env.env.MONGO_PASSWORD}@cluster0.jwudy.mongodb.net/test`,
@@ -18,21 +17,6 @@ const connectDB = async () => {
 
   console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold);
 };
-//connect to db
-// mongoose.connect(
-//   `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.jwudy.mongodb.net/test`,
-//   {
-//     useNewUrlParser: true,
-
-//     useUnifiedTopology: true,
-//   }
-// );
-// .then(() => {
-//   console.log("dziala".green.bold);
-// })
-// .catch((err) => {
-//   console.log("nie dziala".red.bold);
-// });
 
 connectDB();
 //read json files
