@@ -1,8 +1,6 @@
-const Workout = require("./models/workout");
-const Athlete = require("./models/athlete");
-const bcrypt = require("bcryptjs");
+const Workout = require("../models/workout");
 
-const resolvers = {
+const workoutResolvers = {
   Query: {
     getAllWorkouts: async () => {
       return await Workout.find();
@@ -80,46 +78,7 @@ const resolvers = {
       });
       return workout;
     },
-    createAthlete: async (parent, args, context, info) => {
-      try {
-        const existingAthlete = await Athlete.findOne({
-          login: args.athlete.login,
-        });
-        if (existingAthlete) {
-          throw new Error("User exists already.");
-        }
-        const password = await bcrypt.hash(args.athlete.password, 12);
-
-        const athlete = new Athlete({
-          login: args.athlete.login,
-          password: password,
-        });
-
-        const result = await athlete.save();
-
-        return { ...result._doc, password: null, _id: result.id };
-      } catch (err) {
-        throw err;
-      }
-    },
-    setScore: async (args, req) => {
-      // if (!req.isAuth) {
-      //   throw new Error("Unauthenticated!");
-      // const { id } = args.athlete;
-      const { id, time, score } = args.workout;
-      // }
-      try {
-        const athlete = await Athlete.findById(args.athlete.id);
-        return {
-          ...args.workout._doc,
-          _id: args.workout.id,
-          finishers: workout.bind(this, athlete._doc.finishers),
-        };
-      } catch (err) {
-        throw err;
-      }
-    },
   },
 };
 
-module.exports = resolvers;
+module.exports = workoutResolvers;
