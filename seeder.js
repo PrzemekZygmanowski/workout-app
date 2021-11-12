@@ -1,6 +1,7 @@
 const fs = require("fs");
 const mongoose = require("mongoose");
 const colors = require("colors");
+const env = require("./nodemon.json");
 
 //load models
 const Workout = require("./src/models/workout");
@@ -8,10 +9,9 @@ const Workout = require("./src/models/workout");
 //TODO import env from nodemon.json
 const connectDB = async () => {
   const conn = await mongoose.connect(
-    `mongodb+srv://przemek:LWlW8riiZeH9rm3T@cluster0.jwudy.mongodb.net/test`,
+    `mongodb+srv://${env.env.MONGO_USER}:${env.env.MONGO_PASSWORD}@cluster0.jwudy.mongodb.net/test`,
     {
       useNewUrlParser: true,
-
       useUnifiedTopology: true,
     }
   );

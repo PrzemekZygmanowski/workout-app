@@ -5,6 +5,7 @@ const colors = require("colors");
 
 const typeDefs = require("./typeDefs");
 const resolvers = require("./resolvers");
+const cors = require("cors");
 
 async function startServer() {
   const app = express();
@@ -18,6 +19,7 @@ async function startServer() {
 
   apolloServer.applyMiddleware({ app });
 
+  app.use(cors());
   app.use((req, res) => {
     res.send("hello from express");
   });
