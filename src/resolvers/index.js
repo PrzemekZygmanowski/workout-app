@@ -6,4 +6,4 @@ const rootResolver = {
   ...athleteResolvers,
 };
 
-module.exports = rootResolver;
+module.exports = { rootResolver };

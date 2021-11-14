@@ -4,7 +4,7 @@ const typeDefs = gql`
   type Workout {
     id: ID
     name: String
-    workoutType: String
+    workoutType: WorkoutType
     timerType: String
     description: String
     equipment: String
@@ -21,6 +21,12 @@ const typeDefs = gql`
     equipment: String
     time: String
     score: Int
+  }
+  enum WorkoutType {
+    Bodyweight
+    Mixed
+    Running
+    Barbell
   }
 
   input UpdateWorkoutInput {
@@ -43,15 +49,12 @@ const typeDefs = gql`
     id: ID!
     login: String!
     password: String!
+    finishedWorkouts: [Workout]
   }
 
   input AthleteInput {
     login: String!
     password: String!
-  }
-
-  input ScoreInput {
-    finishers: FinisherInput
   }
 
   input FinisherInput {
@@ -62,7 +65,7 @@ const typeDefs = gql`
 
   type Query {
     getAllWorkouts: [Workout]
-    getWorkoutById: Workout
+    getWorkoutById(id: ID): Workout
     login(login: String!, password: String!): AuthData!
   }
 

@@ -1,6 +1,7 @@
 const Workout = require("./models/workout");
 const Athlete = require("./models/athlete");
 const bcrypt = require("bcryptjs");
+const athlete = require("./models/athlete");
 
 const resolvers = {
   Query: {
@@ -52,7 +53,6 @@ const resolvers = {
       } = args.workout;
       const updates = {};
 
-      ////////Do poprawy!!!!!/////
       if (name !== undefined) {
         updates.name = name;
       }
@@ -95,9 +95,8 @@ const resolvers = {
           password: password,
         });
 
-        const result = await athlete.save();
-
-        return { ...result._doc, password: null, _id: result.id };
+        await athlete.save();
+        return athlete;
       } catch (err) {
         throw err;
       }
@@ -106,14 +105,16 @@ const resolvers = {
       // if (!req.isAuth) {
       //   throw new Error("Unauthenticated!");
       // const { id } = args.athlete;
-      const { id, time, score } = args.workout;
+
       // }
       try {
-        const athlete = await Athlete.findById(args.athlete.id);
+        const { id, time, score } = args.athlete;
+        const workout = await Workout.findById(args.workout.id);
+        // const athlete = await Athlete.findById(args.athlete.id);
         return {
           ...args.workout._doc,
           _id: args.workout.id,
-          finishers: workout.bind(this, athlete._doc.finishers),
+          finishers: athlete.bind(this, athlete._doc.finishers),
         };
       } catch (err) {
         throw err;
